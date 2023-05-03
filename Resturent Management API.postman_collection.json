@@ -1,0 +1,828 @@
+{
+	"info": {
+		"_postman_id": "76484738-9a15-43d3-8fc8-89127a9ae595",
+		"name": "Resturent Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17084655"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"adminA@rcms.com\",\r\n    \"password\":\"adminA@rcms.com\",\r\n    \"returnSecureToken\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"identitytoolkit",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"v1",
+								"accounts:signInWithPassword"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg3YzFlN2Y4MDAzNGJiYzgxYjhmMmRiODM3OTIxZjRiZDI4N2YxZGYiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoic2Fuaml2IGt1bWFyIHBhbmRpdCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vb2d3L0FPTG42M0hlZG96cE5IdlNUN3ZqUjk3ZHVYZjJYM2Z0UkpNZEEwVzFUWjdXRnc9czMyLWMtbW8iLCJyb2xlIjoyLCJhZG1pbiI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL3Fyd2FsbGV0YXBwIiwiYXVkIjoicXJ3YWxsZXRhcHAiLCJhdXRoX3RpbWUiOjE2ODA5NTY0NjgsInVzZXJfaWQiOiJGVzgzanNZa241VkVRaVhtMEdGaXZHNzZTOXkxIiwic3ViIjoiRlc4M2pzWWtuNVZFUWlYbTBHRml2Rzc2Uzl5MSIsImlhdCI6MTY4MDk1NjQ2OCwiZXhwIjoxNjgwOTYwMDY4LCJlbWFpbCI6ImtzYW5qaXYwMDA1QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfbnVtYmVyIjoiKzkxOTE5OTExODg5OSIsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsicGhvbmUiOlsiKzkxOTE5OTExODg5OSJdLCJlbWFpbCI6WyJrc2Fuaml2MDAwNUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.OAovR7P901-HPt3Sm1iyg-eTZD-LZ16cQoappLjtahwqwbZmiTerKgMSssY5DLfdB--5ch7ojRbvTk98GgjIfaGYBKphkv8owiOcxtqB_X20qNN-ANeGJ7a3xzy3gg7mvreNN85rqZb-YW-duGp5jgyoblhJMGR_WszgNr-GhsCCBl043GFKsoia_sPrJt6WxOWp3Pf2kGLL4VeZwDZfUwqfvviK0-1JJ865ByzxjxfBR7yPFN9zDmcH3iIdlpaFY84wKLXpZj4dj5xHZoJaSt-A6bs58rOq7a_xyOl90Vw4o-6EdANMJVPelSBRjIbiOqIG_FysRFm_VSGtc3q4Jg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "authorization",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg3YzFlN2Y4MDAzNGJiYzgxYjhmMmRiODM3OTIxZjRiZDI4N2YxZGYiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoic2Fuaml2IGt1bWFyIHBhbmRpdCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vb2d3L0FPTG42M0hlZG96cE5IdlNUN3ZqUjk3ZHVYZjJYM2Z0UkpNZEEwVzFUWjdXRnc9czMyLWMtbW8iLCJyb2xlIjoyLCJhZG1pbiI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL3Fyd2FsbGV0YXBwIiwiYXVkIjoicXJ3YWxsZXRhcHAiLCJhdXRoX3RpbWUiOjE2ODA5NTY0NjgsInVzZXJfaWQiOiJGVzgzanNZa241VkVRaVhtMEdGaXZHNzZTOXkxIiwic3ViIjoiRlc4M2pzWWtuNVZFUWlYbTBHRml2Rzc2Uzl5MSIsImlhdCI6MTY4MDk1NjQ2OCwiZXhwIjoxNjgwOTYwMDY4LCJlbWFpbCI6ImtzYW5qaXYwMDA1QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfbnVtYmVyIjoiKzkxOTE5OTExODg5OSIsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsicGhvbmUiOlsiKzkxOTE5OTExODg5OSJdLCJlbWFpbCI6WyJrc2Fuaml2MDAwNUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.OAovR7P901-HPt3Sm1iyg-eTZD-LZ16cQoappLjtahwqwbZmiTerKgMSssY5DLfdB--5ch7ojRbvTk98GgjIfaGYBKphkv8owiOcxtqB_X20qNN-ANeGJ7a3xzy3gg7mvreNN85rqZb-YW-duGp5jgyoblhJMGR_WszgNr-GhsCCBl043GFKsoia_sPrJt6WxOWp3Pf2kGLL4VeZwDZfUwqfvviK0-1JJ865ByzxjxfBR7yPFN9zDmcH3iIdlpaFY84wKLXpZj4dj5xHZoJaSt-A6bs58rOq7a_xyOl90Vw4o-6EdANMJVPelSBRjIbiOqIG_FysRFm_VSGtc3q4Jg",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg3YzFlN2Y4MDAzNGJiYzgxYjhmMmRiODM3OTIxZjRiZDI4N2YxZGYiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoic2Fuaml2IGt1bWFyIHBhbmRpdCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vb2d3L0FPTG42M0hlZG96cE5IdlNUN3ZqUjk3ZHVYZjJYM2Z0UkpNZEEwVzFUWjdXRnc9czMyLWMtbW8iLCJyb2xlIjoyLCJhZG1pbiI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL3Fyd2FsbGV0YXBwIiwiYXVkIjoicXJ3YWxsZXRhcHAiLCJhdXRoX3RpbWUiOjE2ODA5NTY0NjgsInVzZXJfaWQiOiJGVzgzanNZa241VkVRaVhtMEdGaXZHNzZTOXkxIiwic3ViIjoiRlc4M2pzWWtuNVZFUWlYbTBHRml2Rzc2Uzl5MSIsImlhdCI6MTY4MDk1NjQ2OCwiZXhwIjoxNjgwOTYwMDY4LCJlbWFpbCI6ImtzYW5qaXYwMDA1QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfbnVtYmVyIjoiKzkxOTE5OTExODg5OSIsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsicGhvbmUiOlsiKzkxOTE5OTExODg5OSJdLCJlbWFpbCI6WyJrc2Fuaml2MDAwNUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.OAovR7P901-HPt3Sm1iyg-eTZD-LZ16cQoappLjtahwqwbZmiTerKgMSssY5DLfdB--5ch7ojRbvTk98GgjIfaGYBKphkv8owiOcxtqB_X20qNN-ANeGJ7a3xzy3gg7mvreNN85rqZb-YW-duGp5jgyoblhJMGR_WszgNr-GhsCCBl043GFKsoia_sPrJt6WxOWp3Pf2kGLL4VeZwDZfUwqfvviK0-1JJ865ByzxjxfBR7yPFN9zDmcH3iIdlpaFY84wKLXpZj4dj5xHZoJaSt-A6bs58rOq7a_xyOl90Vw4o-6EdANMJVPelSBRjIbiOqIG_FysRFm_VSGtc3q4Jg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/user/current",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@rcms.com\",\r\n    \"password\":\"admin@rcms.com\",\r\n    \"displayName\":\"admin\",\r\n    \"phoneNumber\":\"+916205796058\",\r\n    \"photoURL\":\"https://lh3.googleusercontent.com/ogw/AOLn63HedozpNHvST7vjR97duXf2X3ftRJMdA0W1TZ7WFw=s32-c-mo\",\r\n    \"role\":{{admin}},\r\n    \"isAdminAccess\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Food Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"name\":\"Dosha\",\r\n      \"image\":\"https://b.zmtcdn.com/data/dish_photos/9da/e4e123d0d7d1fda7c496b624878c49da.jpg?fit=around|130:130&crop=130:130;*,*\",\r\n      \"description\":\"this is test south indian food.\",\r\n      \"price\":259,\r\n      \"isVeg\":true,\r\n      \"quantity\":{{pqh}},\r\n      \"category\":{{south_indian}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/product/643560320ae5f2911b4b270c",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"643560320ae5f2911b4b270c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"_id\": \"6442751d551ac45af75440f0x\",\r\n            \"name\": \"Pizza\",\r\n            \"image\": \"https://b.zmtcdn.com/data/dish_photos/9da/e4e123d0d7d1fda7c496b624878c49da.jpg?fit=around|130:130&crop=130:130;*,*\",\r\n            \"description\": \"Contains 100% real mozzarella cheese. Onion, Capsicum, Mushroom, Tomato. Corn.\",\r\n            \"quantity\": 1,\r\n            \"isVeg\": false,\r\n            \"category\": 5,\r\n            \"price\": 499,\r\n            \"isReadyToServe\": false,\r\n            \"createdAt\": \"2023-04-21T11:35:57.671Z\",\r\n            \"__v\": 0\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/product/644275d5551ac45af75440f6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"644275d5551ac45af75440f6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Table",
+			"item": [
+				{
+					"name": "Get Tables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/table",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Table",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/table/64428ae8a574975b8d7e9aaf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"table",
+								"64428ae8a574975b8d7e9aaf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Table",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kid\":\"abc-ka1a3f508-1160-4861-b0c1-e54a5f7c2896\",\r\n    \"tableNumber\":2,\r\n    \"totalSeats\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/table",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Table",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"kid\": \"abc-ka1a3f508-1160-4861-b0c1-e54a5f7c2896\",\r\n        \"availableSeats\": 2,\r\n        \"totalSeats\": 5,\r\n        \"about\": \"\",\r\n        \"tableNumber\": 2,\r\n        \"_id\": \"64428af4a574975b8d7e9ab1\",\r\n        \"createdAt\": \"2023-04-21T13:09:08.005Z\",\r\n        \"__v\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/table",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Table",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/table/6436cabb7c4e8e79202b7607",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"table",
+								"6436cabb7c4e8e79202b7607"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Get Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/employee",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/employee/6437d69c2a447717d8eb42bf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"employee",
+								"6437d69c2a447717d8eb42bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\":\"cafeD\",\r\n  \"phoneNumber\": \"+911111111118\",\r\n  \"email\": \"cafeD@rcms.com\",\r\n  \"address\": \"patna waste a\",\r\n  \"jobTitle\": \"waiter\",\r\n\r\n  \"skill\": {{north_indian}},\r\n  \"payScale\": 12000,\r\n  \"workingHours\": 8,\r\n  \"role\":{{cafe}},\r\n  \"password\":\"cafeD@rcms.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/employee",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Add Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kid\":\"abc-ka1a3f508-1160-4861-b0c1-e54a5f7c2896\",\r\n    \"pids\": [\r\n        \"6442751d551ac45af75440f0\",\r\n        \"6442759f551ac45af75440f4\"\r\n    ],\r\n    \"tableId\": \"64428ae8a574975b8d7e9aaf\",\r\n    \"customerId\": \"644295ed94712460364311c9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"pids\": [\r\n            \"6442751d551ac45af75440f0\",\r\n            \"6442759f551ac45af75440f4\"\r\n        ],\r\n        \"kid\": \"abc-ka1a3f508-1160-4861-b0c1-e54a5f7c2896\",\r\n        \"tableNumber\": 1,\r\n        \"tableId\": \"64428ae8a574975b8d7e9aaf\",\r\n        \"customerId\": \"644295ed94712460364311c9\",\r\n        \"status\": {{opreparing}},\r\n        \"waitingTime\": \"\",\r\n        \"_id\": \"644297eb3c5eab2c38d00e95\",\r\n        \"createdAt\": \"2023-04-21T14:04:27.037Z\",\r\n        \"__v\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/order/643bd1e0fa03a52d71ed3f62",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"643bd1e0fa03a52d71ed3f62"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Add Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"sanjiv\", \"phoneNumber\" : \"9540991156\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kitchan",
+			"item": [
+				{
+					"name": "Add kitchan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kName\":\"abc-k\",\r\n    \"resturantName\":\"Rasoi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/kitchen",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kitchen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get kitchens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/kitchen",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kitchen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Kitchen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/kitchen/6442893cd2884b129bdaa836",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kitchen",
+								"6442893cd2884b129bdaa836"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kitchen Employee",
+			"item": [
+				{
+					"name": "Add Employee To Kitchen",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"kid\":\"abc-ka1a3f508-1160-4861-b0c1-e54a5f7c2896\",\r\n   \"employeeId\":\"64427231551ac45af75440eb\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/kitchen/employee",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"kitchen",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({key: 'Authorization', value: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2ZGE4NmU4MWJkNTllMGE4Y2YzNTgwNTJiYjUzYjUzYjE4MzA3NzMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiYWRtaW5BIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9vZ3cvQU9MbjYzSGVkb3pwTkh2U1Q3dmpSOTdkdVhmMlgzZnRSSk1kQTBXMVRaN1dGdz1zMzItYy1tbyIsInJvbGUiOjIsImFkbWluIjp0cnVlLCJlbXBsb3llZVJvbGUiOjAsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zYW1wbGVwcm9qZWN0LTgwNjBkIiwiYXVkIjoic2FtcGxlcHJvamVjdC04MDYwZCIsImF1dGhfdGltZSI6MTY4MjA4NTkwOCwidXNlcl9pZCI6IkVlTGRXNkRrT1lXUGhsb3pmQ3luNzR1U1NLSTMiLCJzdWIiOiJFZUxkVzZEa09ZV1BobG96ZkN5bjc0dVNTS0kzIiwiaWF0IjoxNjgyMDg1OTA4LCJleHAiOjE2ODIwODk1MDgsImVtYWlsIjoiYWRtaW5hQHJjbXMuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwaG9uZV9udW1iZXIiOiIrOTExMTExMTExMTEyIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrOTExMTExMTExMTEyIl0sImVtYWlsIjpbImFkbWluYUByY21zLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.B9S6NhpMFKkK74u8vDIx2SmATB85Zl8PikCP4s8nQMTGK0jZimQlRtp1OWJ73ElIJdlWe9ce-7wCJZGvlWlf_5ygtQ5SfdWPwlQ6BrvDqYkLKiAzmtgfb5pHLiWLTNzmH4nrjNKrRrtEevmF1a52URG8aIaAYIk5ZYcgaA4dsezjjtyeHIiJq7QaZF3oLgLnzE6BtG7ZBad-JgQfYzFc9Rnp3s-RZv92vLZfxdWtN1i_FP5slV0yOWiwaZXv4WF_8AqT-woJjalMhZkeRXpotUPc2z4pHZHHCEqezoLtpmEX4yhLvyXFfXgGuSKlmuTrEba7Y531ItbMna38rcIIYw' });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:4000",
+			"type": "string"
+		},
+		{
+			"key": "api_key",
+			"value": "AIzaSyA4VXMTXUTcKV_k0nCBcaz739LpUQHG-tk",
+			"type": "string"
+		},
+		{
+			"key": "employee",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "admin",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "cafe",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "waiter",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "kitchan_mng",
+			"value": "3",
+			"type": "string"
+		},
+		{
+			"key": "north_indian",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "south_indian",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "pizza",
+			"value": "5",
+			"type": "string"
+		},
+		{
+			"key": "chinese",
+			"value": "4",
+			"type": "string"
+		},
+		{
+			"key": "pqh",
+			"value": "0",
+			"type": "string"
+		},
+		{
+			"key": "pqf",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "oplaced",
+			"value": "0",
+			"type": "string"
+		},
+		{
+			"key": "oaccepted",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "opreparing",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "oready",
+			"value": "3",
+			"type": "string"
+		},
+		{
+			"key": "ocomplete",
+			"value": "4",
+			"type": "string"
+		}
+	]
+}

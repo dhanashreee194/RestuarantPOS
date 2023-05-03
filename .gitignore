@@ -1,0 +1,9 @@
+node_modules
+.env
+*.png
+*.jpeg
+*.svg
+dist
+qrwallet-firebase-adminsdk-nwr99-0ebf16a8f0.json
+
+paypal.txt
